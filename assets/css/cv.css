@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a{
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+/**********************
+
+   Variable et Class
+
+**********************/
+
+:root {
+  --grisC: #cacaca;
+  --gris7: #8a8a8a;
+  --border: #aaa;
+  --bleu: #068ec6;
+  --texte: #555;
+  --bgNoir: #111;
+  --color-block: #1a1a1a;
+  --color-block2: #2f2c2c;
+  --color-block3: rgba(54, 54, 54, 0.7);
+  --color-text: #ffffff;
+  --color-price: #ffd700;
+  --white: hsl(0, 100%, 100%);
+  --color-titre: #ffb800;
+  --color-accent: #e53935;
+  --color-btn: #f4b400;
+}
+
+.containers {
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+section .container {
+  margin: 50px auto;
+  padding: 0 40px;
+  width: 500px;
+}
+
+.noBorder {
+  border: none !important;
+}
+
+.top10 {
+  margin-top: 10px;
+}
+
+/**********************
+
+          CV
+
+**********************/
+
+html {
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: Arial;
+}
+
+.grand_titre {
+  text-align: center;
+  font-size: 45px;
+  color: var(--bleu);
+  margin: 50px 0;
+}
+.section_main {
+  border: 1px solid var(--border);
+  background: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0px 5px 50px var(--gris7);
+}
+body {
+
+    background: var(--color-block);
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+  background: var(--color-block);
+  height: 150px;
+  color: #ffffffff;
+}
+
+
+header h1{
+    margin-left:40px;
+    background: var(--gris7);
+    color: #fff;
+    text-align: center;
+    align-content: center;
+    width: 240px;
+    height: 100%;
+    /* line-height: 150px; */
+    font-size: 25px;
+
+    font-family: "Pacifico", "cursive", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+    text-transform: uppercase;
+}
+
+header ul {
+  display:flex;
+}
+
+header ul li {
+  height: fit-content;
+  padding: 10px;
+  font-size: 15px;
+  color: #aaa;
+  
+}
+
+header ul li strong {
+  display: block;
+  text-transform: uppercase;
+  color: #eee;
+  font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+.entete{
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+header ul li #prenom,
+header ul li #nom {
+  display: block;
+  font-size: 25px;
+  /* line-height: 1.25; */
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+
+header ul li #nom {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+main {
+  display: flex;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+aside {
+  background: #e5eaeb;
+
+  padding: 0 10px;
+}
+
+
+aside img {
+  width: 100%;
+  margin: 60px auto 60px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-shadow: 0px 5px 50px var(--gris7);
+}
+
+aside h2, section article h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 10px;
+  border-top: 1px solid #cecece;
+}
+
+aside p {
+  color: var(--texte);
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+section article {
+  border-top: 1px solid #cecece;
+  margin-bottom: 50px;
+}
+
+section article h2 {
+  width: auto;
+  background: #fff;
+  border-right: 1px solid #cecece;
+  position: relative;
+  top: -10px;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+section article p {
+  color: var(--texte);
+  line-height: 1.2;
+}
+
+section article li.exp {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+section article li span.periode {
+  border-right: 1px solid var(--border);
+  font-weight: bold;
+  display: flex;
+  width: 97px;
+  white-space: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section article li.exp span.desc {
+  padding-left: 20px;
+  line-height: 1.4;
+  color: var(--texte);
+}
+
+section article li.exp span.desc strong {
+  font-weight: bold;
+}
+
+footer {
+  background: var(--bgNoir);
+  height: 50px;
+}
+
+footer ul {
+  display: flex;
+}
+
+footer ul li:first-child {
+  background: var(--bleu);
+  background: #444;
+  height: 50px;
+}
+
+footer ul li:nth-child(2) img {
+  height: 14px;
+  position: relative;
+  top: 3px;
+}
+
+footer ul li:nth-child(2) {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 35px;
+  padding-top: 15px;
+}
+
+footer ul li:nth-child(2) a {
+  color: #999;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+footer ul li:nth-child(2) a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 250px) {
+
+    .section_main{
+        overflow: hidden;
+    }
+}
+
+ul.skills {
+  list-style: none;
+  padding: 0;
+  padding-left: 20px;
+}
+
+.skills li {
+  position: relative;
+  margin-bottom: 20px;
+  cursor: default;
+  color: #222;
+  
+}
+
+.skills li span {
+  font-size: 12px;
+  
+}
+
+.skills li .description {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 10px 15px;
+  border-left: 4px solid #007bff;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #333;
+  z-index: 2;
+}
+
+.skills li:hover .description {
+  display: block;
+  border: 1px solid rgba(29, 30, 31, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

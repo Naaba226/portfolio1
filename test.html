@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des Compétences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+
+    ul.skills {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills li {
+      position: relative;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: default;
+      color: #222;
+    }
+
+    .skills li .description {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      padding: 10px 15px;
+      border-left: 4px solid #007BFF;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 350px;
+      font-weight: normal;
+      font-size: 14px;
+      color: #333;
+      z-index: 2;
+    }
+
+    .skills li:hover .description {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Mes Compétences</h2>
+  <ul class="skills">
+    <li>
+      Développement Web
+      <div class="description">
+        HTML, CSS, JavaScript, PHP, Laravel, MySQL.<br>
+        Création de sites web modernes, responsives, sécurisés et performants.
+      </div>
+    </li>
+    <li>
+      Réseaux & Systèmes
+      <div class="description">
+        Configuration Cisco, topologies réseau, services Linux (DHCP, DNS, SSH), sécurité réseau, virtualisation.
+      </div>
+    </li>
+    <li>
+      Cybersécurité
+      <div class="description">
+        Surveillance du trafic, détection des menaces, pare-feu, durcissement des systèmes, analyse de logs.
+      </div>
+    </li>
+    <li>
+      Développement Mobile
+      <div class="description">
+        Applications Android natives en Kotlin, intégration API REST, interfaces modernes, performances optimisées.
+      </div>
+    </li>
+  </ul>
+
+</body>
+</html>

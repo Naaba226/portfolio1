@@ -14,16 +14,16 @@ function affiche(imgs) {
 }
 
 
-const frontend_html = 78;
+const frontend_html = 81;
 const frontend_javascript = 55;
 const frondent_bootstrap = 87;
-const frontend_react = 46;
+const frontend_react = 40;
 
 const backend_java = 67;
-const backend_php = 7;
-const backend_sql = 43;
+const backend_php = 69;
+const backend_sql = 52;
 
-const cms_wordpress = 44;
+const cms_wordpress = 46;
 const cms_canvas = 92;
 
 const progress_python = 21;
@@ -31,20 +31,20 @@ const progress_c = 51;
 
 const progress_autre_marketing = 61;
 const progress_autre_maintenannce = 76;
-const progress_autre_alibaba = 55;
+const progress_autre_alibaba = 75;
 
 const progress_mobile_kotline = 64;
 const progress_mobile_flutter = 5;
-const progress_mobile_swift = 0;
+const progress_mobile_swift = 5;
 
-const progress_uml = 36;
-const progress_projet = 27;
+const progress_uml = 61;
+const progress_projet = 33;
 
 const progress_reseaux_administration = 81;
-const progress_reseaux_instalation = 76;
+const progress_reseaux_instalation = 79;
 const progress_reseaux_securite = 41;
 
-const progress_adobe_xd = 10;
+const progress_adobe_xd = 89;
 const progress_photoshop = 75;
 const progress_illustrator = 41;
 
@@ -55,21 +55,19 @@ function chargeGrandBar(bar, ...elements){
     let nombre =  0
     let moyenne = 0
     let hoverClass = "hover_vert";
-    console.log(elements)
+    
     elements.forEach(element => {
         if(element>20){
             nombre++
             somme+=element
-            console.log(element)
+            
 
         }
         
     });
 
     moyenne=(somme/nombre)  || 0
-    console.log(moyenne)
-    console.log(somme)
-    console.log(nombre)
+
     bar.style.width = moyenne+"%";
     if (moyenne < 40) {
         hoverClass = "hover_rouge";
@@ -96,7 +94,7 @@ if (valeur < 40) {
 progressElement.classList.add(hoverClass);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function charge() {
 
 addEffect(document.getElementById("adobe_xd"), document.getElementById("progress_adobe_xd"),progress_adobe_xd);
 addEffect(document.getElementById("photoshop"), document.getElementById("progress_photoshop"),progress_photoshop);
@@ -141,6 +139,90 @@ addEffect(document.getElementById("progress_autre_marketing_card"), document.get
 addEffect(document.getElementById("progress_autre_alibaba_card"), document.getElementById("progress_autre_alibaba"),progress_autre_alibaba);
 chargeGrandBar(document.getElementById("progress_autre"),progress_autre_maintenannce,progress_autre_marketing,progress_autre_alibaba);
 
-});
+  window.addEventListener('load', positionnerImages);
+  window.addEventListener('resize', positionnerImages);
+
+};
 // Appliquer l'effet de survol à .competences_card avec la classe hover-effect
 //addHoverEffect(".competences_card", "hover-effect");
+
+
+// animation
+
+document.addEventListener("DOMContentLoaded", charge);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll('.slide-left,.reveal, .slide-right, .slide-in').forEach(el => {
+  observer.observe(el);
+});
+
+const observer1 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const progress = entry.target;
+
+    if (entry.isIntersecting) {
+
+      charge();
+    } else {
+     
+      progress.style.width = '0'; // Repart à zéro si on sort du viewport
+    }
+  });
+}, {
+  threshold: 0.5
+});
+
+// Appliquer à tous les éléments .progress
+document.querySelectorAll('.progress').forEach(el => {
+  observer1.observe(el);
+});
+
+
+
+
+
+function positionnerImages() {
+  const cards = document.querySelectorAll('.niveau_container-card');
+  const section = document.querySelector('.section-niveau-contener');
+
+  if (!section) {
+    console.error('Section .section-niveau-contener introuvable.');
+    return;
+  }
+
+  const sectionRect = section.getBoundingClientRect();
+  const sectionCenter = sectionRect.left + sectionRect.width / 2;
+
+  cards.forEach(card => {
+    const cardRect = card.getBoundingClientRect();
+    const cardCenter = cardRect.left + cardRect.width / 2;
+
+    const imageContainer = card.querySelector('.niveau-contenaire-cart-img');
+
+    if (!imageContainer) {
+      console.warn('Pas de .niveau-contenaire-cart-img dans cette carte:', card);
+      return;
+    }
+
+    imageContainer.classList.remove('hover-left', 'hover-right');
+
+    if (cardCenter < sectionCenter) {
+      imageContainer.classList.add('hover-right');
+    } else {
+      imageContainer.classList.add('hover-left');
+    }
+  });
+}
+
+
